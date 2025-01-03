@@ -26,7 +26,6 @@
         }
 
         .image-area::before {
-            content: 'Uploaded image result';
             color: #000;
             font-weight: bold;
             text-transform: uppercase;
@@ -190,13 +189,14 @@
             id="home"
         >
             <div style="width: 50%; height: 100vh; padding:5rem; align-content:center;">
-                <h1 class="text-white fw-bold display-3" style="margin: 0rem;">FakeExposé</h1>
-                <h1 class="text-white fw-bold display-3" style="margin: 0rem;">Deepfake Image</h1>
-                <h1 class="text-white fw-bold display-3" style="margin: 0rem;">Detection</h1>
-
-                <h4 class="text-white" style="margin-top: 3rem;">
-                    Our deepfake detection system is designed to distinguish between real and fake facial images by analyzing facial features using deep neural networks.
-                </h4>
+                <h1 class="text-white fw-bold display-1" style="margin: 0rem;">FakeExposé</h1>
+                <hr style="color:rgb(14, 193, 193);"></hr>
+                <h4 class="fw-bold" style="margin: 0rem; color: #008080; ">Image and Video Deepfake Detection</h4>
+                <h5 class="text-white" style="margin-top: 2rem;">
+                    Expose deepfake faces with FakeExposé, trained using the neural network VGG19 for 
+                    accurate detection in images and videos. Upload, preview, and reveal the truth 
+                    because authenticity matters.
+                </h5>
             </div>
 
             <div style="width: 50%; margin:auto;">
@@ -234,7 +234,7 @@
                             <img src="{{ url_for('static', filename=processed_image) }}" alt="Uploaded Image" class="img-fluid rounded shadow-sm" style="max-width: 300px; max-height: 300px;" id= "image-area">
                         </div>
                         <p style="margin-top: 2rem; margin-bottom:0rem;">Prediction: <strong style="color:#008080;">{{ prediction[0] }}</strong></p>
-                        <p style="margin-top: 0rem;">Confidence: <strong style="color:#008080;">{{ prediction[1] }}</strong></p>
+                        <p style="margin-top: 0rem;">Confidence: <strong style="color:#008080;">{{ prediction[1] }}%</strong></p>
 
                         <button onclick="window.location.href='/'" class="btn" style="background-color: #fff;border-color:#008080; margin-top:1rem;">
                             Try Again
@@ -270,31 +270,50 @@
             <div style="margin-bottom: 3rem;"></div>
             <h1 class="text-white fw-bold display-4" style="margin: 0rem;">How FakeExposé Works</h1>
             <h5 class="text-white" style="margin-top: 3rem;">
-                Here are its key features that make it a powerful deepfake detection tool
+                FakeExposé simplifies deepfake detection for images and videos. Here’s how:
             </h5>
 
 
-            <div style="display:flex; justify-content: center; align-items:center; margin-top:5rem;">
+            <div style="display:flex; align-items:center; justify-content: center; margin-top:5rem;">
 
-                <div style="background-color: white; border-radius:1rem; padding:1.5rem; width:18rem; height:23rem;">
-                    <img src="{{ url_for('static', filename='images/brain.png') }}" width="50" height="50" style="margin-top:1.5rem;" alt="">
-                    <p class="fw-bold" style="margin-top:1.5rem; font-size:1.5rem;">CNN Approach</p>
+                <div style="background-color: transparent; border-radius:1rem; padding:1.5rem; width:20rem; height:25rem;">
+                    <div> 
+                        <div style="background-color:white; border-radius:50%; height: 100px; width: 100px; display:flex; align-items:center; justify-content: center; margin-left:auto; margin-right:auto"> 
+                            <img src="{{ url_for('static', filename='images/eye.png') }}" width="50" height="50" alt="">
+                        </div>
+                        <p class="fw-bold text-white" style="margin-top:1rem; font-size:1.5rem; margin-bottom:0.3rem;">Upload & Preview</p>
+                    </div>
 
-                    <p>FakeExposé employs a Convolutional Neural Network (CNN) architecture, enabling it to effectively analyze and identify subtle patterns and anomalies in image data.</p>
+                    <p style="font-size:0.9rem; font-weight: 600; color: rgb(176, 231, 231);">
+                        Upload an image or video, and instantly preview it. For videos, the first frame is displayed for a quick glance.
+                    </p>
                 </div>
 
-                <div style="background-color: white; border-radius:1rem; padding:1.5rem; width:18rem; height:23rem; margin-left:5rem;">
-                    <img src="{{ url_for('static', filename='images/brain.png') }}" width="50" height="50" style="margin-top:1.5rem;" alt="">
-                    <p class="fw-bold" style="margin-top:1.5rem; font-size:1.5rem;">Face Images</p>
+                <div style="background-color: transparent; border-radius:1rem; padding:1.5rem; width:20rem; height:25rem; margin-left:5rem;">
+                    <div> 
+                        <div style="background-color:white; border-radius:50%; height: 100px; width: 100px; display:flex; align-items:center; justify-content: center; margin-left:auto; margin-right:auto"> 
+                            <img src="{{ url_for('static', filename='images/face-scanner.png') }}" width="50" height="50" alt="">
+                        </div>
+                        <p class="fw-bold text-white" style="margin-top:1rem; font-size:1.5rem; margin-bottom:0.3rem;">Face Detection</p>
+                    </div>
 
-                    <p>The system is specifically optimized to detect deepfakes in facial images, ensuring enhanced accuracy in distinguishing real from fake visual content.</p>
+                    <p style="font-size:0.9rem; font-weight: 600; color: rgb(176, 231, 231);">
+                        Faces are detected and cropped, ready for analysis.
+                    </p>
                 </div>
 
-                <div style="background-color: white; border-radius:1rem; padding:1.5rem; width:18rem; height:23rem; margin-left:5rem;">
-                    <img src="{{ url_for('static', filename='images/check-square.png') }}" width="50" height="50" style="margin-top:1.5rem;" alt="">
-                    <p class="fw-bold" style="margin-top:1.5rem; font-size:1.5rem;">Confidence Analysis</p>
+                <div style="background-color: transparent; border-radius:1rem; padding:1.5rem; width:20rem; height:25rem; margin-left:5rem;">
+                    <div> 
+                        <div style="background-color:white; border-radius:50%; height: 100px; width: 100px; display:flex; align-items:center; justify-content: center; margin-left:auto; margin-right:auto"> 
+                            <img src="{{ url_for('static', filename='images/analyze.png') }}" width="50" height="50" alt="">
+                        </div>
+                        <p class="fw-bold text-white" style="margin-top:1rem; font-size:1.5rem; margin-bottom:0.3rem;">Deepfake Analysis</p>
+                    </div>
 
-                    <p>Provides detailed confidence scores for each detection, helping users understand the reliability of results and make informed decisions.</p>
+                    <p style="font-size:0.9rem; font-weight: 600; color:rgb(176, 231, 231);">
+                        Using VGG19, each face is analyzed. 
+                        A single fake face marks the whole frame or image as fake, with video predictions based on majority voting.
+                    </p>
                 </div>
 
             </div>
@@ -314,17 +333,13 @@
 
             <div style="display: flex; justify-content:center; margin-top:6rem;">
                 <div>
-                    <div style="border-radius: 50%; height:15rem; width: 15rem; background-color:white;">
-                    
-                    </div>
+                    <img src="{{ url_for('static', filename='images/tophy.jpg') }}" width="250" height="250" style="border-radius: 50%;" alt="">
                     <h5 style="color:white; margin-top:1.5rem;">Shane Tophy Linanay</h5>
                     <p style="color:#008080; font-size:smaller;">stglinganay00110@usep.edu.ph</p>
                 </div>
 
                 <div style="margin-left:15rem;">
-                    <div style="border-radius: 50%; height:15rem; width: 15rem; background-color:white;">
-                    
-                    </div>
+                    <img src="{{ url_for('static', filename='images/viancie.jpg') }}" width="250" height="250" style="border-radius: 50%;" alt="">
                     <h5 style="color:white; margin-top:1.5rem;">Mary Chris Viancie Oceña</h5>
                     <p style="color:#008080; font-size:smaller;">mcvpocena00113@usep.edu.ph</p>
                 </div>

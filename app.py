@@ -27,7 +27,7 @@ def allowed_file(filename):
 model = YOLO('./static/models/yolov8n-face.pt')
 
 # deepfake detect model
-model_predict_path = "./static/models/VGG19.keras"
+model_predict_path = "./static/models/VGG19_Fine_Tuned.keras"
 model_predict = tf.keras.models.load_model(model_predict_path)
 
 # fake or real
@@ -260,7 +260,14 @@ def detect():
                     
             else: 
                 img_with_boxes, cropped_images = process_images(file_path, filename)
-
+                
+                if img_with_boxes == False:
+                    return render_template(
+                        'index.html', 
+                        prediction="No faces detected",
+                        uploaded_image=f'upload/{filename}'
+                    )
+                
                 # save processed image that has bounding boxes
                 processed_filename = f"processed_{filename}"
                 processed_path = os.path.join(app.config['PROCESSED_FOLDER'], processed_filename)
