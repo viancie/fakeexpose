@@ -1,0 +1,289 @@
+h1 {
+    color:white;
+    font-weight: bold;
+    margin:0rem;
+    font-size: 3rem;
+}
+
+h5 {
+    color:white;
+    margin-top:2rem;
+    font-weight: 300;
+}
+
+#nav-bar {
+    border-bottom: 2px solid #008080; 
+    background-color:black;
+}
+
+#home {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    background:linear-gradient(to bottom, #000000, #008080);
+    height: 100vh; 
+}
+
+#home .content {
+    padding:5rem; 
+    align-content:center;
+}
+
+#home h1 {
+    font-size: 7rem;
+}
+
+#home h4 {
+    margin: 0rem; 
+    color: #008080; 
+    font-weight:bold;
+}
+
+#home h5 {
+    margin-top: 2rem; 
+    color:white;
+}
+
+#detect-container {
+    background-color: #f9f9f9; 
+    border-radius:0.6rem; 
+    max-width:30rem;
+    padding:3rem;
+    text-align: center;
+}
+
+#home-right {
+    margin:auto;
+}
+
+#upload {
+    opacity: 0;
+}
+
+#upload-label {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+}
+
+.image-area {
+    border: 3px dashed rgba(0, 128, 128, 0.7);
+    border-radius: 1rem;
+    padding: 1rem;
+    position: relative;
+}
+
+.image-area::before {
+    color: #000;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.8rem;
+    z-index: 1;
+}
+
+.image-area img {
+    z-index: 2;
+    position: relative;
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.pure-blue {
+    background-color: #008080;
+    padding: 3rem; 
+    text-align:center;
+}
+
+#about-container {
+    display:grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    margin-top:5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.about-div {
+    background-color: transparent; 
+    border-radius:1rem; 
+    padding:1.5rem; 
+}
+
+#about-div-margin {
+    margin-left:5rem;
+}
+
+.about-image {
+    background-color:white; 
+    border-radius:50%; 
+    height: 100px; 
+    width: 100px; 
+    display:flex; 
+    align-items:center; 
+    justify-content: center; 
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+.about-title {
+    font-weight: bold;
+    color: white;
+    margin-top:1rem; 
+    font-size:1.5rem;
+    margin-bottom:0.3rem;
+}
+
+.about-text {
+    font-size:0.9rem; 
+    font-weight: 600; 
+    color: rgb(176, 231, 231);
+}
+
+#team {
+    background:linear-gradient(to bottom, #008080, #000000); 
+    text-align:center;
+    padding:3rem;
+}
+
+#team-container {
+    margin-top:6rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+#team-container h5 {
+    margin-top:1.5rem;
+    font-weight: 600;
+}
+
+#team-container p {
+    color:#008080; 
+    font-size:0.8rem;
+}
+
+@media (max-width: 1300px) {
+    #home {
+        display:block;
+        height: auto;
+    }
+
+    #home .content {
+        padding:5rem;
+    }
+
+    #home h1 {
+        text-align: center;
+    }
+
+    #home h4 {
+        text-align: center;
+    }
+
+    #home h5 {
+        text-align: center;
+    }
+
+    #home-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #detect-container {
+        max-width:23rem;
+        padding:2rem;
+        text-align: center;
+    }
+
+    .image-area img {
+        max-width: 250px;
+        max-height: 250px;
+    }
+    .team-div {
+        padding: 2rem;
+    }
+
+    .blank-space1{
+        display: none;
+    }
+}
+
+@media (max-width: 61em) {
+    #home {
+        display:block
+    }
+
+    #home .content {
+        padding:3rem;
+    }
+
+    #home h1 {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    #home h4 {
+        text-align: center;
+    }
+
+    #home h5 {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    #home-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #detect-container {
+        max-width:20rem;
+        padding:2rem;
+        text-align: center;
+    }
+
+    .image-area img {
+        max-width: 220px;
+        max-height: 250px;
+    }
+
+    #about-container {
+        margin-top: 5rem;
+        display: block;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #about-div-margin {
+        margin-left:0;
+    }
+
+    .about-image {
+        width: 85px;
+        height: 85px;
+    }
+    .about-title {
+        margin-top:0.5rem; 
+        font-size:1.3rem;
+    }
+
+    #team-container{
+        display: block;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .team-div {
+        padding: 0rem;
+    }
+
+}
