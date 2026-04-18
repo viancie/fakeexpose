@@ -57,7 +57,8 @@ The optimized VGG19 model achieved improved performance compared to a frozen bas
 - TensorFlow  
 - YOLO (Face Detection)  
 - VGG19 (Transfer Learning)  
-- Pandas  
+- Pandas
+- Flask
 
 ---
 
